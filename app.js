@@ -3,8 +3,7 @@ const userInput = document.getElementById('userInput')
 const get_News = document.getElementById('get_News')
 get_News.addEventListener('click',function(){
     const output = userInput.value;
-    console.log(output);
-    userInput.innerText="";
+   
 
 const fetchData = async()=>{
     try{
@@ -12,12 +11,11 @@ const fetchData = async()=>{
 
 `)
         const jsondata = await response.json();
-        // console.log(jsondata.articles
-        // );
+       
         for(let i = 0; i <jsondata.articles.length;i++){
             console.log(jsondata.articles[i]);
             container.innerHTML+=`
-            <div class="card" style="width: 18rem;">
+            <div id="cards" class="card" style="width: 18rem ;">
   <img src=${jsondata.articles[i].urlToImage} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"></h5>
